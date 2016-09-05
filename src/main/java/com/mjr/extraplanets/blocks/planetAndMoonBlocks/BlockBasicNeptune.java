@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -35,7 +36,7 @@ public class BlockBasicNeptune extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister par1IconRegister) {
-		this.blockIcons = new IIcon[10];
+		this.blockIcons = new IIcon[11];
 		this.blockIcons[0] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "Surface");
 		this.blockIcons[1] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "SubSurface");
 		this.blockIcons[2] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "Stone");
@@ -46,6 +47,7 @@ public class BlockBasicNeptune extends Block {
 		this.blockIcons[7] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "zincBlock");
 		this.blockIcons[8] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "StoneBricks");
 		this.blockIcons[9] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "OreBlueGem");
+		this.blockIcons[10] = par1IconRegister.registerIcon(Constants.TEXTURE_PREFIX + this.name + "blueGemBlock");
 		this.blockIcon = this.blockIcons[0];
 	}
 
@@ -98,15 +100,14 @@ public class BlockBasicNeptune extends Block {
 			par3List.add(new ItemStack(par1, 1, var4));
 		}
 	}
-
+	
 	@Override
-	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z, EntityPlayer player) {
 		int metadata = world.getBlockMetadata(x, y, z);
-		if (metadata == 4) {
+		if (metadata == 8) {
 			return new ItemStack(Item.getItemFromBlock(this), 1, metadata);
 		}
 
-		return super.getPickBlock(target, world, x, y, z);
+		return super.getPickBlock(target, world, x, y, z, player);
 	}
-
 }

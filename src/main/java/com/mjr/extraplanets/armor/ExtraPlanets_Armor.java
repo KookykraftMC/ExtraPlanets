@@ -9,15 +9,19 @@ import com.mjr.extraplanets.Config;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ExtraPlanets_Armor {
-	private static ArmorMaterial carbon_ArmorMaterial = EnumHelper.addArmorMaterial("Carbon_Armor", 26, new int[] { 6, 11, 7, 6 }, 12);
-	private static ArmorMaterial palladium_ArmorMaterial = EnumHelper
-			.addArmorMaterial("Palladium_Armor", 26, new int[] { 7, 12, 7, 3 }, 12);
-	private static ArmorMaterial magnesium_ArmorMaterial = EnumHelper
-			.addArmorMaterial("Magnesium_Armor", 30, new int[] { 8, 13, 7, 3 }, 12);
-	private static ArmorMaterial crystal_ArmorMaterial = EnumHelper.addArmorMaterial("Crystal_Armor", 40, new int[] { 9, 14, 7, 9 }, 15);
-	private static ArmorMaterial mercury_ArmorMaterial = EnumHelper.addArmorMaterial("Mercury_Armor", 20, new int[] { 6, 11, 7, 6 }, 12);
-	private static ArmorMaterial zinc_ArmorMaterial = EnumHelper.addArmorMaterial("Zinc_Armor", 20, new int[] { 6, 11, 7, 6 }, 12);
-	private static ArmorMaterial uranium_ArmorMaterial = EnumHelper.addArmorMaterial("Uranium_Armor", 20, new int[] { 6, 11, 7, 6 }, 12);
+	private static ArmorMaterial carbon_ArmorMaterial = EnumHelper.addArmorMaterial("Carbon_Armor", 26, new int[] { 3, 8, 6, 3 }, 15);
+	private static ArmorMaterial palladium_ArmorMaterial = EnumHelper.addArmorMaterial("Palladium_Armor", 26, new int[] { 3, 8, 6, 3 }, 13);
+	private static ArmorMaterial magnesium_ArmorMaterial = EnumHelper.addArmorMaterial("Magnesium_Armor", 30, new int[] { 3, 8, 6, 3 }, 11);
+	private static ArmorMaterial crystal_ArmorMaterial = EnumHelper.addArmorMaterial("Crystal_Armor", 40, new int[] { 3, 8, 6, 3 }, 10);
+
+	private static ArmorMaterial mercury_ArmorMaterial = EnumHelper.addArmorMaterial("Mercury_Armor", 15, new int[] { 3, 8, 6, 3 }, 13);
+	private static ArmorMaterial uranium_ArmorMaterial = EnumHelper.addArmorMaterial("Uranium_Armor", 20, new int[] { 3, 8, 6, 3 }, 13);
+	private static ArmorMaterial zinc_ArmorMaterial = EnumHelper.addArmorMaterial("Zinc_Armor", 45, new int[] { 3, 8, 6, 3 }, 9);
+	private static ArmorMaterial tungsten_ArmorMaterial = EnumHelper.addArmorMaterial("Tungsten_Armor", 50, new int[] { 3, 8, 6, 3 }, 7);
+
+	private static ArmorMaterial redGem_ArmorMaterial = EnumHelper.addArmorMaterial("Red_Gem_Armor", 28, new int[] { 3, 8, 6, 3 }, 7);
+	private static ArmorMaterial whiteGem_ArmorMaterial = EnumHelper.addArmorMaterial("White_Gem_Armor", 40, new int[] { 3, 8, 6, 3 }, 7);
+	private static ArmorMaterial blueGem_ArmorMaterial = EnumHelper.addArmorMaterial("Blue_Gem_Armor", 45, new int[] { 3, 8, 6, 3 }, 7);
 
 	public static Item carbonHelmet;
 	public static Item carbonChest;
@@ -38,22 +42,42 @@ public class ExtraPlanets_Armor {
 	public static Item crystalChest;
 	public static Item crystalLegings;
 	public static Item crystalBoots;
-	
+
 	public static Item zincHelmet;
 	public static Item zincChest;
 	public static Item zincLegings;
 	public static Item zincBoots;
-	
+
 	public static Item mercuryHelmet;
 	public static Item mercuryChest;
 	public static Item mercuryLegings;
 	public static Item mercuryBoots;
-	
+
 	public static Item uraniumHelmet;
 	public static Item uraniumChest;
 	public static Item uraniumLegings;
 	public static Item uraniumBoots;
-	
+
+	public static Item tungstenHelmet;
+	public static Item tungstenChest;
+	public static Item tungstenLegings;
+	public static Item tungstenBoots;
+
+	public static Item redGemHelmet;
+	public static Item redGemChest;
+	public static Item redGemLegings;
+	public static Item redGemBoots;
+
+	public static Item whiteGemHelmet;
+	public static Item whiteGemChest;
+	public static Item whiteGemLegings;
+	public static Item whiteGemBoots;
+
+	public static Item blueGemHelmet;
+	public static Item blueGemChest;
+	public static Item blueGemLegings;
+	public static Item blueGemBoots;
+
 	public static void init() {
 		initializeArmor();
 		registerArmor();
@@ -78,11 +102,19 @@ public class ExtraPlanets_Armor {
 			uraniumLegings = new UraniumArmor("uranium", uranium_ArmorMaterial, 2).setUnlocalizedName("uraniumLegings");
 			uraniumBoots = new UraniumArmor("uranium", uranium_ArmorMaterial, 3).setUnlocalizedName("uraniumBoots");
 		}
-		if (Config.palladiumItems && Config.jupiter) {
-			palladiumHelmet = new PalladiumArmor("palladium", palladium_ArmorMaterial, 0).setUnlocalizedName("palladiumHelmet");
-			palladiumChest = new PalladiumArmor("palladium", palladium_ArmorMaterial, 1).setUnlocalizedName("palladiumChest");
-			palladiumLegings = new PalladiumArmor("palladium", palladium_ArmorMaterial, 2).setUnlocalizedName("palladiumLegings");
-			palladiumBoots = new PalladiumArmor("palladium", palladium_ArmorMaterial, 3).setUnlocalizedName("palladiumBoots");
+		if (Config.jupiter) {
+			if (Config.palladiumItems) {
+				palladiumHelmet = new PalladiumArmor("palladium", palladium_ArmorMaterial, 0).setUnlocalizedName("palladiumHelmet");
+				palladiumChest = new PalladiumArmor("palladium", palladium_ArmorMaterial, 1).setUnlocalizedName("palladiumChest");
+				palladiumLegings = new PalladiumArmor("palladium", palladium_ArmorMaterial, 2).setUnlocalizedName("palladiumLegings");
+				palladiumBoots = new PalladiumArmor("palladium", palladium_ArmorMaterial, 3).setUnlocalizedName("palladiumBoots");
+			}
+			if (Config.redGemItems) {
+				redGemHelmet = new RedGemArmor("redGem", redGem_ArmorMaterial, 0).setUnlocalizedName("redGemHelmet");
+				redGemChest = new RedGemArmor("redGem", redGem_ArmorMaterial, 1).setUnlocalizedName("redGemChest");
+				redGemLegings = new RedGemArmor("redGem", redGem_ArmorMaterial, 2).setUnlocalizedName("redGemLegings");
+				redGemBoots = new RedGemArmor("redGem", redGem_ArmorMaterial, 3).setUnlocalizedName("redGemBoots");
+			}
 		}
 		if (Config.magnesiumItems && Config.saturn) {
 			magnesiumHelmet = new MagnesiumArmor("magnesium", magnesium_ArmorMaterial, 0).setUnlocalizedName("magnesiumHelmet");
@@ -95,12 +127,30 @@ public class ExtraPlanets_Armor {
 			crystalChest = new CrystalArmor("crystal", crystal_ArmorMaterial, 1).setUnlocalizedName("crystalChest");
 			crystalLegings = new CrystalArmor("crystal", crystal_ArmorMaterial, 2).setUnlocalizedName("crystalLegings");
 			crystalBoots = new CrystalArmor("crystal", crystal_ArmorMaterial, 3).setUnlocalizedName("crystalBoots");
+			if (Config.whiteGemItems) {
+				whiteGemHelmet = new WhiteGemArmor("whiteGem", whiteGem_ArmorMaterial, 0).setUnlocalizedName("whiteGemHelmet");
+				whiteGemChest = new WhiteGemArmor("whiteGem", whiteGem_ArmorMaterial, 1).setUnlocalizedName("whiteGemChest");
+				whiteGemLegings = new WhiteGemArmor("whiteGem", whiteGem_ArmorMaterial, 2).setUnlocalizedName("whiteGemLegings");
+				whiteGemBoots = new WhiteGemArmor("whiteGem", whiteGem_ArmorMaterial, 3).setUnlocalizedName("whiteGemBoots");
+			}
 		}
 		if (Config.zincItems && Config.neptune) {
 			zincHelmet = new ZincArmor("zinc", zinc_ArmorMaterial, 0).setUnlocalizedName("zincHelmet");
 			zincChest = new ZincArmor("zinc", zinc_ArmorMaterial, 1).setUnlocalizedName("zincChest");
 			zincLegings = new ZincArmor("zinc", zinc_ArmorMaterial, 2).setUnlocalizedName("zincLegings");
 			zincBoots = new ZincArmor("zinc", zinc_ArmorMaterial, 3).setUnlocalizedName("zincBoots");
+			if (Config.blueGemItems) {
+				blueGemHelmet = new BlueGemArmor("blueGem", blueGem_ArmorMaterial, 0).setUnlocalizedName("blueGemHelmet");
+				blueGemChest = new BlueGemArmor("blueGem", blueGem_ArmorMaterial, 1).setUnlocalizedName("blueGemChest");
+				blueGemLegings = new BlueGemArmor("blueGem", blueGem_ArmorMaterial, 2).setUnlocalizedName("blueGemLegings");
+				blueGemBoots = new BlueGemArmor("blueGem", blueGem_ArmorMaterial, 3).setUnlocalizedName("blueGemBoots");
+			}
+		}
+		if (Config.tungstenItems && Config.pluto) {
+			tungstenHelmet = new TungstenArmor("tungsten", tungsten_ArmorMaterial, 0).setUnlocalizedName("tungstenHelmet");
+			tungstenChest = new TungstenArmor("tungsten", tungsten_ArmorMaterial, 1).setUnlocalizedName("tungstenChest");
+			tungstenLegings = new TungstenArmor("tungsten", tungsten_ArmorMaterial, 2).setUnlocalizedName("tungstenLegings");
+			tungstenBoots = new TungstenArmor("tungsten", tungsten_ArmorMaterial, 3).setUnlocalizedName("tungstenBoots");
 		}
 	}
 
@@ -123,11 +173,19 @@ public class ExtraPlanets_Armor {
 			GameRegistry.registerItem(uraniumLegings, "uraniumLegings");
 			GameRegistry.registerItem(uraniumBoots, "uraniumBoots");
 		}
-		if (Config.palladiumItems && Config.jupiter) {
-			GameRegistry.registerItem(palladiumHelmet, "palladiumHelmet");
-			GameRegistry.registerItem(palladiumChest, "palladiumChest");
-			GameRegistry.registerItem(palladiumLegings, "palladiumLegings");
-			GameRegistry.registerItem(palladiumBoots, "palladiumBoots");
+		if (Config.jupiter) {
+			if (Config.palladiumItems) {
+				GameRegistry.registerItem(palladiumHelmet, "palladiumHelmet");
+				GameRegistry.registerItem(palladiumChest, "palladiumChest");
+				GameRegistry.registerItem(palladiumLegings, "palladiumLegings");
+				GameRegistry.registerItem(palladiumBoots, "palladiumBoots");
+			}
+			if (Config.redGemItems) {
+				GameRegistry.registerItem(redGemHelmet, "redGemHelmet");
+				GameRegistry.registerItem(redGemChest, "redGemChest");
+				GameRegistry.registerItem(redGemLegings, "redGemLegings");
+				GameRegistry.registerItem(redGemBoots, "redGemBoots");
+			}
 		}
 		if (Config.magnesiumItems && Config.saturn) {
 			GameRegistry.registerItem(magnesiumHelmet, "magnesiumHelmet");
@@ -135,17 +193,39 @@ public class ExtraPlanets_Armor {
 			GameRegistry.registerItem(magnesiumLegings, "magnesiumLegings");
 			GameRegistry.registerItem(magnesiumBoots, "magnesiumBoots");
 		}
-		if (Config.crystalItems && Config.uranus) {
-			GameRegistry.registerItem(crystalHelmet, "crystalHelmet");
-			GameRegistry.registerItem(crystalChest, "crystalChest");
-			GameRegistry.registerItem(crystalLegings, "crystalLegings");
-			GameRegistry.registerItem(crystalBoots, "crystalBoots");
+		if (Config.uranus) {
+			if (Config.crystalItems) {
+				GameRegistry.registerItem(crystalHelmet, "crystalHelmet");
+				GameRegistry.registerItem(crystalChest, "crystalChest");
+				GameRegistry.registerItem(crystalLegings, "crystalLegings");
+				GameRegistry.registerItem(crystalBoots, "crystalBoots");
+			}
+			if (Config.whiteGemItems) {
+				GameRegistry.registerItem(whiteGemHelmet, "whiteGemHelmet");
+				GameRegistry.registerItem(whiteGemChest, "whiteGemChest");
+				GameRegistry.registerItem(whiteGemLegings, "whiteGemLegings");
+				GameRegistry.registerItem(whiteGemBoots, "whiteGemBoots");
+			}
 		}
-		if (Config.zincItems && Config.neptune) {
-			GameRegistry.registerItem(zincHelmet, "zincHelmet");
-			GameRegistry.registerItem(zincChest, "zincChest");
-			GameRegistry.registerItem(zincLegings, "zincLegings");
-			GameRegistry.registerItem(zincBoots, "zincBoots");
+		if (Config.neptune) {
+			if (Config.zincItems) {
+				GameRegistry.registerItem(zincHelmet, "zincHelmet");
+				GameRegistry.registerItem(zincChest, "zincChest");
+				GameRegistry.registerItem(zincLegings, "zincLegings");
+				GameRegistry.registerItem(zincBoots, "zincBoots");
+			}
+			if (Config.blueGemItems) {
+				GameRegistry.registerItem(blueGemHelmet, "blueGemHelmet");
+				GameRegistry.registerItem(blueGemChest, "blueGemChest");
+				GameRegistry.registerItem(blueGemLegings, "blueGemLegings");
+				GameRegistry.registerItem(blueGemBoots, "blueGemBoots");
+			}
+		}
+		if (Config.tungstenItems && Config.pluto) {
+			GameRegistry.registerItem(tungstenHelmet, "tungstenHelmet");
+			GameRegistry.registerItem(tungstenChest, "tungstenChest");
+			GameRegistry.registerItem(tungstenLegings, "tungstenLegings");
+			GameRegistry.registerItem(tungstenBoots, "tungstenBoots");
 		}
 	}
 }

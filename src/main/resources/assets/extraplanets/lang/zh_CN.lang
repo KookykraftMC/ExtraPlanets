@@ -84,6 +84,7 @@ tile.ceres.oreTin.name=谷神星锡矿石
 tile.ceres.oreCopper.name=谷神星铜矿石
 tile.ceres.oreUranium.name=谷神星铀矿石
 tile.ceres.stoneBricks.name=谷神星石砖
+tile.ceres.uraniumBlock.name=Block of Uranium
 
 tile.jupiter.surface.name=木星地表方块
 tile.jupiter.subSurface.name=木星地底方块
@@ -96,6 +97,7 @@ tile.jupiter.oreNickel.name=木星镍矿石
 tile.jupiter.oreRedGem.name=木星红宝石矿石
 tile.jupiter.stoneBricks.name=木星方块砖
 tile.jupiter.palladiumBlock.name=钯块
+tile.jupiter.redGemBlock.name=Block of Red Gem
 
 tile.saturn.surface.name=土星地表方块
 tile.saturn.subSurface.name=土星地底方块
@@ -114,6 +116,7 @@ tile.uranus.oreCrystal.name=天王星水晶石
 tile.uranus.oreWhiteGem.name=天王星白宝石矿石
 tile.uranus.stoneBricks.name=天王星方块砖
 tile.uranus.crystalBlock.name=水晶石块
+tile.uranus.whiteGemBlock.name=Block of White Gem
 
 tile.neptune.surface.name=海王星地表方块
 tile.neptune.subSurface.name=海王星地底方块
@@ -125,6 +128,7 @@ tile.neptune.oreZinc.name=海王星锌矿石
 tile.neptune.oreBlueGem.name=海王星蓝宝石矿石
 tile.neptune.stoneBricks.name=海王星方块砖
 tile.neptune.zincBlock.name=锌块
+tile.neptune.blueGemBlock.name=Block of Blue Gem
 
 tile.pluto.surface.name=冥王星地表岩石
 tile.pluto.subSurface.name=冥王星地底岩石
@@ -487,6 +491,8 @@ schematic.rocketT9.name=9阶火箭
 item.mercuryBattery.name=汞电池
 item.nickelBattery.name=镍电池
 item.zincBattery.name=锌电池
+item.advancedBattery.name=Advanced Battery
+item.ultimateBattery.name=Ultimate Battery
 
 #Armor
 item.carbonHelmet.name=碳盔
@@ -529,6 +535,10 @@ item.zincHelmet.name=Zinc Helmet
 item.zincChest.name=Zinc Chestplate
 item.zincLegings.name=Zinc Leggings
 item.zincBoots.name=Zinc Boots
+item.tungstenHelmet.name=Tungsten Helmet
+item.tungstenChest.name=Tungsten Chestplate
+item.tungstenLegings.name=Tungsten Leggings
+item.tungstenBoots.name=Tungsten Boots
 
 item.tier2ThermalHelm.name=2阶热力充能头盔
 item.tier2ThermalChestplate.name=2阶热力充能胸甲
@@ -627,9 +637,9 @@ achievement.plutoBoss.desc=击杀冥王星地牢BOSS并开启宝箱！
 
 achievement.craftRocket4=4阶火箭！
 achievement.craftRocket5=5阶火箭！
-achievement.craftRocket7=6阶火箭！
-achievement.craftRocket8=7阶火箭！
-achievement.craftRocket9=8阶火箭！
+achievement.craftRocket6=6阶火箭！
+achievement.craftRocket7=7阶火箭！
+achievement.craftRocket8=8阶火箭！
 achievement.craftRocket9=9阶火箭！
 
 achievement.craftRocket4.desc=制作4阶火箭
